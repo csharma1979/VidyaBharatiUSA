@@ -1,0 +1,169 @@
+.admin-dashboard {     
+    padding: 2rem;     
+    min-height: 100vh;     
+    background-color: #f8fafc;     
+    font-size: 1.5rem;     
+    text-align: center;   
+}      
+
+.dashboard-header {     
+    display: flex;     
+    justify-content: space-between;     
+    align-items: center;     
+    margin-bottom: 24px;     
+    background: linear-gradient(135deg, #841B2D 0%, #6B1523 100%); /* Footer color gradient */     
+    padding: 1rem 1.5rem;     
+    border-radius: 8px;     
+    color: white;     
+    box-shadow: 0 4px 12px rgba(132, 27, 45, 0.15);   
+}      
+
+.dashboard-header h1,   
+.dashboard-header h2,   
+.dashboard-header h3 {     
+    color: white;     
+    margin: 0;   
+}      
+
+.sidebar {     
+    height: 100%;     
+    min-height: calc(100vh - 120px);     
+    background: linear-gradient(180deg, #841B2D 0%, #6B1523 100%); /* Footer color gradient */     
+    border-radius: 8px;     
+    box-shadow: 0 4px 12px rgba(132, 27, 45, 0.15);   
+}      
+
+.content-stats {     
+    padding: 24px;     
+    background-color: white;     
+    border-radius: 8px;     
+    box-shadow: 0 2px 8px rgba(132, 27, 45, 0.1);     
+    margin-bottom: 1.5rem;   
+}      
+
+.stat-card {     
+    padding: 20px;     
+    text-align: center;     
+    background: linear-gradient(135deg, #fdf2f4 0%, #ffffff 100%); /* Light footer color gradient */     
+    border: 1px solid rgba(132, 27, 45, 0.1);     
+    border-radius: 8px;     
+    transition: all 0.3s ease;     
+    box-shadow: 0 2px 8px rgba(132, 27, 45, 0.05);   
+}      
+
+.stat-card:hover {     
+    transform: translateY(-2px);     
+    box-shadow: 0 8px 20px rgba(132, 27, 45, 0.15);     
+    border-color: #841B2D;   
+}      
+
+.stat-card h4 {     
+    color: #841B2D; /* Footer color */     
+    margin-bottom: 8px;     
+    font-weight: 600;   
+}      
+
+.stat-card .stat-number {     
+    color: #6B1523; /* Darker shade of footer color */     
+    font-size: 2rem;     
+    font-weight: bold;     
+    margin-bottom: 0.5rem;   
+}      
+
+.stat-card .stat-label {     
+    color: #841B2D; /* Footer color */     
+    font-size: 0.9rem;     
+    text-transform: uppercase;     
+    letter-spacing: 0.5px;   
+}      
+
+.dashboard-content {     
+    padding: 24px;     
+    min-height: calc(100vh - 120px);     
+    background-color: white;     
+    border-radius: 8px;     
+    box-shadow: 0 2px 8px rgba(132, 27, 45, 0.1);     
+    border: 1px solid rgba(132, 27, 45, 0.1);   
+}      
+
+/* Additional dashboard elements with footer color theme */   
+.dashboard-widget {     
+    background: linear-gradient(135deg, #ffffff 0%, #fdf2f4 100%);     
+    border: 1px solid rgba(132, 27, 45, 0.15);     
+    border-radius: 8px;     
+    padding: 1.5rem;     
+    margin-bottom: 1rem;     
+    box-shadow: 0 2px 8px rgba(132, 27, 45, 0.08);   
+}      
+
+.dashboard-widget h5 {     
+    color: #841B2D;     
+    margin-bottom: 1rem;     
+    font-weight: 600;   
+}      
+
+.dashboard-btn {     
+    background-color: #841B2D;     
+    color: white;     
+    border: none;     
+    padding: 0.75rem 1.5rem;     
+    border-radius: 6px;     
+    font-weight: 500;     
+    cursor: pointer;     
+    transition: all 0.3s ease;   
+}      
+
+.dashboard-btn:hover {     
+    background-color: #6B1523;     
+    transform: translateY(-1px);     
+    box-shadow: 0 4px 12px rgba(132, 27, 45, 0.25);   
+}      
+
+.dashboard-btn.secondary {     
+    background-color: transparent;     
+    color: #841B2D;     
+    border: 2px solid #841B2D;   
+}      
+
+.dashboard-btn.secondary:hover {     
+    background-color: #841B2D;     
+    color: white;   
+}      
+
+/* Dashboard navigation/breadcrumb styling */   
+.dashboard-nav {     
+    background-color: rgba(132, 27, 45, 0.05);     
+    padding: 0.75rem 1rem;     
+    border-radius: 6px;     
+    margin-bottom: 1rem;   
+}      
+
+.dashboard-nav a {     
+    color: #841B2D;     
+    text-decoration: none;     
+    font-weight: 500;   
+}      
+
+.dashboard-nav a:hover {     
+    color: #6B1523;     
+    text-decoration: underline;   
+}      
+
+/* Status indicators with footer color theme */   
+.status-active {     
+    background-color: #841B2D;     
+    color: white;     
+    padding: 0.25rem 0.75rem;     
+    border-radius: 20px;     
+    font-size: 0.8rem;     
+    font-weight: 500;   
+}      
+
+.status-inactive {     
+    background-color: rgba(132, 27, 45, 0.1);     
+    color: #841B2D;     
+    padding: 0.25rem 0.75rem;     
+    border-radius: 20px;     
+    font-size: 0.8rem;     
+    font-weight: 500;   
+}

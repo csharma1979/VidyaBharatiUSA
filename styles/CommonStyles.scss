@@ -1,0 +1,109 @@
+.custom-button {     
+    background-color: #841B2D; /* Footer color */     
+    color: white;     
+    padding: 10px 20px;     
+    font-size: 16px;     
+    border: none;     
+    cursor: pointer;     
+    border-radius: 0.375rem;     
+    transition: all 0.3s ease;     
+    font-weight: 500;     
+    box-shadow: 0 2px 4px rgba(132, 27, 45, 0.2);   
+}      
+
+.custom-button:hover {     
+    background-color: #6B1523; /* Darker shade of footer color */     
+    transform: translateY(-1px);     
+    box-shadow: 0 4px 8px rgba(132, 27, 45, 0.3);   
+}      
+
+.custom-button:active {     
+    background-color: #5A111D; /* Even darker shade for active state */     
+    transform: translateY(0);     
+    box-shadow: 0 2px 4px rgba(132, 27, 45, 0.4);   
+}      
+
+.custom-button:focus {     
+    outline: none;     
+    box-shadow: 0 0 0 3px rgba(132, 27, 45, 0.3);   
+}      
+
+.custom-button:disabled {     
+    background-color: rgba(132, 27, 45, 0.5); /* Faded footer color */     
+    cursor: not-allowed;     
+    transform: none;     
+    box-shadow: none;   
+}      
+
+/* Secondary button variant */   
+.custom-button.secondary {     
+    background-color: transparent;     
+    color: #841B2D; /* Footer color text */     
+    border: 2px solid #841B2D; /* Footer color border */     
+    box-shadow: none;   
+}      
+
+.custom-button.secondary:hover {     
+    background-color: #841B2D; /* Footer color background on hover */     
+    color: white;     
+    transform: translateY(-1px);     
+    box-shadow: 0 4px 8px rgba(132, 27, 45, 0.25);   
+}      
+
+/* Outline button variant */   
+.custom-button.outline {     
+    background-color: white;     
+    color: #841B2D; /* Footer color text */     
+    border: 1px solid #841B2D; /* Footer color border */     
+    box-shadow: 0 1px 3px rgba(132, 27, 45, 0.1);   
+}      
+
+.custom-button.outline:hover {     
+    background-color: #fdf2f4; /* Very light footer color */     
+    border-color: #6B1523; /* Darker footer color border */     
+    color: #6B1523;   
+}      
+
+/* Small button size */   
+.custom-button.small {     
+    padding: 6px 12px;     
+    font-size: 14px;   
+}      
+
+/* Large button size */   
+.custom-button.large {     
+    padding: 12px 24px;     
+    font-size: 18px;   
+}      
+
+/* Success button with footer color theme */   
+.custom-button.success {     
+    background-color: #841B2D; /* Keep footer color for consistency */     
+    border: 1px solid #6B1523;   
+}      
+
+.custom-button.success:hover {     
+    background-color: #6B1523;   
+}      
+
+/* Warning button with footer color theme */   
+.custom-button.warning {     
+    background-color: rgba(132, 27, 45, 0.1); /* Light footer color */     
+    color: #841B2D; /* Footer color text */     
+    border: 1px solid rgba(132, 27, 45, 0.3);   
+}      
+
+.custom-button.warning:hover {     
+    background-color: rgba(132, 27, 45, 0.2);     
+    border-color: #841B2D;   
+}      
+
+/* Danger/Delete button with deeper red */   
+.custom-button.danger {     
+    background-color: #B91C1C; /* Slightly different red, but harmonious */     
+    color: white;   
+}      
+
+.custom-button.danger:hover {     
+    background-color: #991B1B;   
+}

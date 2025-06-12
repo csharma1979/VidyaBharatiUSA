@@ -1,0 +1,93 @@
+$primary-color: #841B2D;
+$highlight-color: #3f87a6;
+$box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+.welcome-section {
+  padding: 96px 0;
+  position: relative;
+
+  .welcome-text {
+    text-align: center;
+    margin-bottom: 64px;
+
+    .title {
+      font-weight: bold;
+      font-size: 3rem;
+      color: #333;
+      margin-bottom: 16px;
+
+      .highlight {
+        color: $primary-color;
+      }
+    }
+
+    .subtitle {
+      font-size: 2rem;
+      color: #666;
+    }
+  }
+
+  .info-cards {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-column {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    justify-content: center;
+  }
+
+  .info-card {
+    position: relative;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+    max-width: 280px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .icon-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: $primary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -30px;
+      left: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+      margin-top: 48px;
+      margin-bottom: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .image-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .center-image {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .impact {
+    color: $highlight-color;
+    font-weight: 600;
+  }
+}
