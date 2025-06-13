@@ -1,0 +1,64 @@
+$primary-color: #841B2D;
+$light-bg: #f0e9ea;
+$button-hover: #e64a2e;
+
+
+
+h2 {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+h3 {
+
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.334;
+    letter-spacing: 0em;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    
+}
+
+h4 {
+    color: #841B2D;
+    font-weight: 600;
+}
+
+.sub-title {
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.235;
+    letter-spacing: 0.00735em;
+    color: #666;
+}
+.sub-para{
+    color:#666;
+}
+
+.page-title {
+    margin-bottom: 48px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #333;
+
+    span {
+        color: #841B2D;
+    }
+
+}
+a{
+    text-decoration: none;
+}
+
+

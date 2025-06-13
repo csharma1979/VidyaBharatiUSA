@@ -2,73 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { FaCalendarAlt, FaArrowLeft, FaUser, FaTag } from "react-icons/fa";
 import PageBanner from "../../layout/PageBanner";
 import axios from "axios";
 import LoadingSpinner from "../../commonComp/LoadingSpinner";
+import { Container, Typography } from "@mui/material";
 
 const BASE_IMAGE_URL = process.env.NEXT_PUBLIC_API_URL;
-
-// Create styled components without Material UI
-const Container = ({ children, style }) => (
-  <div
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      padding: "0 16px",
-      ...style,
-    }}
-  >
-    {children}
-  </div>
-);
-
-const Typography = ({ variant, children, style, paragraph }) => {
-  const getStyleForVariant = () => {
-    switch (variant) {
-      case "h2":
-        return {
-          fontSize: "2.5rem",
-          fontWeight: "600",
-          marginBottom: "0.75rem",
-        };
-      case "h4":
-        return { fontSize: "2rem", fontWeight: "600", marginBottom: "0.5rem" };
-      case "h5":
-        return {
-          fontSize: "1.5rem",
-          fontWeight: "600",
-          marginBottom: "0.5rem",
-        };
-      case "body1":
-        return {
-          fontSize: "1rem",
-          lineHeight: "1.5",
-          marginBottom: paragraph ? "1rem" : "0",
-        };
-      case "body2":
-        return {
-          fontSize: "0.875rem",
-          lineHeight: "1.5",
-          marginBottom: paragraph ? "0.5rem" : "0",
-        };
-      default:
-        return {};
-    }
-  };
-
-  return (
-    <div
-      style={{
-        ...getStyleForVariant(),
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  );
-};
 
 const BlogDetails = () => {
   const router = useRouter();
@@ -263,7 +203,7 @@ const BlogDetails = () => {
             </div>
 
             <Typography
-              variant="h2"
+              variant="h4"
               style={{ color: "#333", marginBottom: "24px" }}
             >
               {article.blogTopic}

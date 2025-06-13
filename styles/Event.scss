@@ -1,0 +1,78 @@
+.event-card {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    @media (max-width: 960px) {
+        flex-direction: column;
+    }
+
+    // .event-card__media {
+    //     width: 40%;
+    //     height: 100%;
+    // }
+
+    .event-card__media {
+        width: 40%;
+
+        object-fit: contain;
+        padding: 1rem;
+        background-color: #f5f5f5;
+
+        @media (max-width: 960px) {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .event-card__content {
+        padding: 2rem;
+        flex-grow: 1;
+    }
+
+    .event-card__datechip {
+        background-color: #841b2d;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .event-card__title {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .event-card__details {
+        margin: 1rem 0;
+        color: #666;
+
+        svg {
+            margin-right: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .event-card__description {
+        color: #666;
+        margin-bottom: 1.5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .event-card__buttons {
+        display: flex;
+        gap: 1rem;
+    }
+}

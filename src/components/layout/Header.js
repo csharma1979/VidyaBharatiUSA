@@ -1,9 +1,9 @@
-"use client"
-import React, { useState } from 'react';
-import { 
-  AppBar, 
-  Toolbar, 
-  Container, 
+"use client";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Container,
   Box,
   Button,
   IconButton,
@@ -13,221 +13,122 @@ import {
   ListItemText,
   useTheme,
   useMediaQuery,
-  styled,
-  Menu, 
-  MenuItem 
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import Link from 'next/link';
-
-const StyledHeader = styled(AppBar)({
-  backgroundColor: '#fff',
-  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-});
-
-const LogoContainer = styled(Box)({
-  '& img': {
-    height: '100px',
-    width: 'auto',
-    padding: '8px 0'
-  }
-});
-
-const NavButton = styled(Button)({
-  color: '#333',
-  margin: '0 8px',
-  '&:hover': {
-    color: '#FF5733',
-    backgroundColor: 'transparent'
-  }
-});
-
-const DonateButton = styled(Button)({
-  backgroundColor: '#dc004e',
-  color: '#fff',
-  margin: '0 8px',
-  padding: '8px 24px',
-  '&:hover': {
-    backgroundColor: '#9a0036'
-  }
-});
-
-const LoginButton = styled(Button)({
-  color: '#333',
-  margin: '0 8px',
-  border: '1px solid #333',
-  '&:hover': {
-    color: '#FF5733',
-    borderColor: '#FF5733',
-    backgroundColor: 'transparent'
-  }
-});
-
-const NavButtonWithDropdown = styled(Button)({
-  color: '#333',
-  margin: '0 8px',
-  '&:hover': {
-    color: '#FF5733',
-    backgroundColor: 'transparent'
-  }
-});
+  Menu,
+  MenuItem,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Link from "next/link";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [programsAnchor, setProgramsAnchor] = useState(null);
   const [sponsorAnchor, setSponsorAnchor] = useState(null);
   const [mediaAnchor, setMediaAnchor] = useState(null);
+
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
-  const handleProgramsClick = (event) => {
-    setProgramsAnchor(event.currentTarget);
-  };
-
-  const handleProgramsClose = () => {
-    setProgramsAnchor(null);
-  };
-
-  const handleSponsorClick = (event) => {
-    setSponsorAnchor(event.currentTarget);
-  };
-
-  const handleSponsorClose = () => {
-    setSponsorAnchor(null);
-  };
-
-  const handleMediaClick = (event) => {
-    setMediaAnchor(event.currentTarget);
-  };
-
-  const handleMediaClose = () => {
-    setMediaAnchor(null);
-  };
+  const openMenu = (setter) => (event) => setter(event.currentTarget);
+  const closeMenu = (setter) => () => setter(null);
 
   const menuItems = [
-    { text: 'Home', path: '/' },
+    { text: "Home", path: "/" },
     {
-      text: 'Programs',
-      path: '/programs',
+      text: "Programs",
       hasSubmenu: true,
       submenuItems: [
-        { text: 'Shiksha Daan', path: '/shiksha-daan' },
-        { text: 'Sanskriti Bodh Pariyojana', path: '/sanskriti-bodh' },
-       // { text: 'Adopt A School', path: '/adopt-school' }
-      ]
+        { text: "Shiksha Daan", path: "/shiksha-daan" },
+        { text: "Sanskriti Bodh Pariyojana", path: "/sanskriti-bodh" },
+      ],
     },
-    { text: 'Events', path: '/events' },
-    { text: 'Blog', path: '/blog' },
-    { text: 'Alumni', path: '/alumni' },
+    { text: "Events", path: "/events" },
+    { text: "Blog", path: "/blog" },
+    { text: "Alumni", path: "/alumni" },
     {
-      text: 'Sponsor',
-      path: '/sponsor',
+      text: "Sponsor",
       hasSubmenu: true,
       submenuItems: [
-        { text: "Support a Child's Education", path: '/support-child' },
-        { text: 'Support Vidya Bharati', path: '/support-vb' },
-        { text: 'Sponsor Construction of a Classroom', path: '/classroom' },
-        { text: 'Sponsor For Establishing a Library', path: '/library' },
-        { text: 'Sponsor Construction of a Toilet Block', path: '/toilet-block' }
-      ]
+        { text: "Support a Child's Education", path: "/support-child" },
+        { text: "Support Vidya Bharati", path: "/support-vb" },
+        { text: "Sponsor Construction of a Classroom", path: "/classroom" },
+        { text: "Sponsor For Establishing a Library", path: "/library" },
+        { text: "Sponsor Construction of a Toilet Block", path: "/toilet-block" },
+      ],
     },
     {
-      text: 'Media',
-      path: '/media',
+      text: "Media",
       hasSubmenu: true,
       submenuItems: [
-        { text: "Achievements", path: '/achievements' },
-        { text: "Latest News", path: '/latest-news' }
-      ]
-    }
+        { text: "Achievements", path: "/achievements" },
+        { text: "Latest News", path: "/latest-news" },
+      ],
+    },
   ];
 
+  const getAnchor = (text) =>
+    text === "Programs" ? programsAnchor : text === "Sponsor" ? sponsorAnchor : mediaAnchor;
+
+  const getOpen = (text) => Boolean(getAnchor(text));
+  const getClickHandler = (text) =>
+    text === "Programs"
+      ? openMenu(setProgramsAnchor)
+      : text === "Sponsor"
+      ? openMenu(setSponsorAnchor)
+      : openMenu(setMediaAnchor);
+
+  const getCloseHandler = (text) =>
+    text === "Programs"
+      ? closeMenu(setProgramsAnchor)
+      : text === "Sponsor"
+      ? closeMenu(setSponsorAnchor)
+      : closeMenu(setMediaAnchor);
+
   return (
-    <StyledHeader position="fixed">
+    <AppBar position="fixed" className="header">
       <Container>
-        <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-          <LogoContainer>
+        <Toolbar disableGutters className="toolbar">
+          <Box className="logo">
             <Link href="/">
               <img src="/assets/logo.webp" alt="Vidya Bharati USA Logo" />
             </Link>
-          </LogoContainer>
+          </Box>
 
           {isMobile ? (
             <IconButton
               color="inherit"
-              aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ color: '#333' }}
+              sx={{ color: "#333" }}
             >
               <MenuIcon />
             </IconButton>
           ) : (
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {menuItems.map((item) => (
+            <Box className="navContainer">
+              {menuItems.map((item) =>
                 item.hasSubmenu ? (
                   <React.Fragment key={item.text}>
-                    <NavButtonWithDropdown
-                      onClick={
-                        item.text === 'Programs' 
-                          ? handleProgramsClick 
-                          : item.text === 'Sponsor' 
-                            ? handleSponsorClick 
-                            : handleMediaClick
-                      }
+                    <Button
+                      onClick={getClickHandler(item.text)}
                       endIcon={<KeyboardArrowDownIcon />}
+                      className="navButton"
                     >
                       {item.text}
-                    </NavButtonWithDropdown>
+                    </Button>
                     <Menu
-                      anchorEl={
-                        item.text === 'Programs' 
-                          ? programsAnchor 
-                          : item.text === 'Sponsor' 
-                            ? sponsorAnchor 
-                            : mediaAnchor
-                      }
-                      open={Boolean(
-                        item.text === 'Programs' 
-                          ? programsAnchor 
-                          : item.text === 'Sponsor' 
-                            ? sponsorAnchor 
-                            : mediaAnchor
-                      )}
-                      onClose={
-                        item.text === 'Programs' 
-                          ? handleProgramsClose 
-                          : item.text === 'Sponsor' 
-                            ? handleSponsorClose 
-                            : handleMediaClose
-                      }
+                      anchorEl={getAnchor(item.text)}
+                      open={getOpen(item.text)}
+                      onClose={getCloseHandler(item.text)}
                     >
                       {item.submenuItems.map((subItem) => (
-                        <Link 
-                          key={subItem.text} 
+                        <Link
+                          key={subItem.text}
                           href={subItem.path}
-                          style={{ textDecoration: 'none', color: 'inherit' }}
+                          style={{ textDecoration: "none", color: "inherit" }}
                         >
-                          <MenuItem
-                            onClick={
-                              item.text === 'Programs' 
-                                ? handleProgramsClose 
-                                : item.text === 'Sponsor' 
-                                  ? handleSponsorClose 
-                                  : handleMediaClose
-                            }
-                            sx={{
-                              minWidth: '300px',
-                              '&:hover': {
-                                color: '#FF5733'
-                              }
-                            }}
-                          >
+                          <MenuItem onClick={getCloseHandler(item.text)}>
                             {subItem.text}
                           </MenuItem>
                         </Link>
@@ -235,25 +136,24 @@ const Header = () => {
                     </Menu>
                   </React.Fragment>
                 ) : (
-                  <Link key={item.text} href={item.path} style={{ textDecoration: 'none' }}>
-                    <NavButton>
-                      {item.text}
-                    </NavButton>
+                  <Link key={item.text} href={item.path} style={{ textDecoration: "none" }}>
+                    <Button className="navButton">{item.text}</Button>
                   </Link>
                 )
-              ))}
-              <LoginButton
+              )}
+              <Button
                 variant="outlined"
+                className="loginButton"
                 href="https://www.vidyabharatialumni.org/alumni/register"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Alumni Login
-              </LoginButton>
-              <Link href="/donate" style={{ textDecoration: 'none' }}>
-                <DonateButton variant="contained">
+              </Button>
+              <Link href="/donate" style={{ textDecoration: "none" }}>
+                <Button variant="contained" className="donateButton">
                   Donate
-                </DonateButton>
+                </Button>
               </Link>
             </Box>
           )}
@@ -265,84 +165,61 @@ const Header = () => {
         open={mobileOpen}
         onClose={handleDrawerToggle}
         sx={{
-          '& .MuiDrawer-paper': { width: 240 }
+          "& .MuiDrawer-paper": { width: 240 },
         }}
       >
         <List>
-          {menuItems.map((item) => (
+          {menuItems.map((item) =>
             item.hasSubmenu ? (
               <React.Fragment key={item.text}>
                 <ListItem>
-                  <ListItemText 
-                    primary={item.text} 
-                    sx={{ 
-                      color: '#666',
-                      fontWeight: 'bold' 
-                    }} 
-                  />
+                  <ListItemText primary={item.text} sx={{ color: "#666", fontWeight: "bold" }} />
                 </ListItem>
                 {item.submenuItems.map((subItem) => (
-                  <Link 
-                    key={subItem.text} 
+                  <Link
+                    key={subItem.text}
                     href={subItem.path}
-                    style={{ textDecoration: 'none', color: 'inherit' }}
+                    style={{ textDecoration: "none", color: "inherit" }}
                   >
-                    <ListItem
-                      button
-                      onClick={handleDrawerToggle}
-                      sx={{ pl: 4 }}
-                    >
+                    <ListItem button onClick={handleDrawerToggle} sx={{ pl: 4 }}>
                       <ListItemText primary={subItem.text} />
                     </ListItem>
                   </Link>
                 ))}
               </React.Fragment>
             ) : (
-              <Link 
-                key={item.text} 
+              <Link
+                key={item.text}
                 href={item.path}
-                style={{ textDecoration: 'none', color: 'inherit' }}
+                style={{ textDecoration: "none", color: "inherit" }}
               >
-                <ListItem
-                  button
-                  onClick={handleDrawerToggle}
-                >
+                <ListItem button onClick={handleDrawerToggle}>
                   <ListItemText primary={item.text} />
                 </ListItem>
               </Link>
             )
-          ))}
-          <ListItem 
-            button 
+          )}
+
+          <ListItem
+            button
             component="a"
             href="https://www.vidyabharatialumni.org/alumni/register"
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleDrawerToggle}
-            sx={{ 
-              borderBottom: '1px solid #eee'
-            }}
+            sx={{ borderBottom: "1px solid #eee" }}
           >
             <ListItemText primary="Alumni Login" />
           </ListItem>
-          <Link href="/donate" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <ListItem 
-              button 
-              onClick={handleDrawerToggle}
-              sx={{ 
-                backgroundColor: '#dc004e',
-                color: '#fff',
-                '&:hover': {
-                  backgroundColor: '#9a0036'
-                }
-              }}
-            >
+
+          <Link href="/donate" style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem button onClick={handleDrawerToggle} className="drawerDonate">
               <ListItemText primary="Donate" />
             </ListItem>
           </Link>
         </List>
       </Drawer>
-    </StyledHeader>
+    </AppBar>
   );
 };
 

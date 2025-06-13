@@ -19,10 +19,10 @@ const dbConnect = async () => {
       useUnifiedTopology: true,
     });
 
-    console.log("✅ Tap-Global 360 DB Connected successfully");
+    console.log("✅ Vidya Bharti DB Connected successfully");
     await createHardcodedUsers();
   } catch (error) {
-    console.error("❌ Tap-Global 360 DB Connection Failed");
+    console.error("❌ Vidya Bharti  360 DB Connection Failed");
     console.error(error);
     process.exit(1);
   }

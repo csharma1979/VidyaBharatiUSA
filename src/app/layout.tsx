@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "../../styles/style.scss";
 import "./globals.css";
 
@@ -9,6 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 const ClientLayout = dynamic(() => import('./ClientLayout'), {
   ssr: false
 });
+
+
 
 export const metadata = {
   title: 'Vidyabharti',
@@ -22,6 +25,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PK3C1BHRX8"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-PK3C1BHRX8');
+            `,
+          }}
+        />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

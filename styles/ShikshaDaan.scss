@@ -1,0 +1,43 @@
+/* HighlightCard.scss */
+.highlight-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  height: 220px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    border-radius: 8px;
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+
+.highlight-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+
+  .highlight-card {
+    flex: 1 1 calc(33.333% - 24px);
+    max-width: calc(33.333% - 24px);
+    min-width: 250px;
+  }
+}

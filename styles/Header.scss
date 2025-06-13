@@ -1,0 +1,66 @@
+.MuiAppBar-root.header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  padding: 8px 0;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navButton {
+  color: #333;
+  margin: 0 8px;
+  font-weight: 500;
+
+  &:hover {
+    color: #FF5733;
+    background-color: transparent;
+  }
+}
+
+.loginButton {
+  color: #333;
+  margin: 0 8px;
+  border: 1px solid #333;
+
+  &:hover {
+    color: #FF5733;
+    border-color: #FF5733;
+    background-color: transparent;
+  }
+}
+
+.donateButton {
+  background-color: #dc004e;
+  color: #fff;
+  margin: 0 8px;
+  padding: 8px 24px;
+
+  &:hover {
+    background-color: #9a0036;
+  }
+}
+
+.drawerDonate {
+  background-color: #dc004e !important;
+  color: #fff !important;
+
+  &:hover {
+    background-color: #9a0036 !important;
+  }
+}
+}
