@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PageBanner from "../../layout/PageBanner";
 import BlogSearch from "./BlogSearch";
-import BlogCategoryFilter from "./BlogCategoryFilter";
 import BlogCard from "./BlogCard";
 import LoadingSpinner from "../../commonComp/LoadingSpinner";
 import { fetchBlogs } from "../../../lib/services/BlogService/BlogsService";
@@ -59,10 +58,7 @@ const BlogSection = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <BlogCategoryFilter
-              selectedCategory={selectedCategory}
-              onSelectCategory={(cat) => setSelectedCategory(cat)}
-            />
+            
             <div className="blog-grid">
               {filteredPosts.length > 0 ? (
                 filteredPosts.map((post) => (

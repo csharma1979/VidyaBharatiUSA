@@ -31,7 +31,7 @@ const dbConnect = async () => {
 const createHardcodedUsers = async () => {
   try {
     const existingUser = await Identity.findOne({
-      email: "support@tapglobal360.com",
+      email: "support@vidyabharatiusa.org",
     });
 
     if (existingUser) {
@@ -41,10 +41,10 @@ const createHardcodedUsers = async () => {
 
     const users = [
       {
-        firstname: "Tap",
-        lastname: "Global360",
-        email: "support@tapglobal360.com",
-        password: "Rishi@2468", // You should hash passwords before storing!
+        firstname: "Vidya",
+        lastname: "Bharti",
+        email: "support@vidyabharatiusa.org",
+        password: "Rishi@2468", 
       },
     ];
 
