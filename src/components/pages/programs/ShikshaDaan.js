@@ -48,18 +48,17 @@ const ShikshaDaan = () => (
     <SectionContainer>
       <SectionHeading variant="h5">About Vidya Bharati</SectionHeading>
 
-      <p className="alumni-desc" style={{ textAlign: "center", marginBottom: "48px" }}>
+      <p
+        className="alumni-desc"
+        style={{ textAlign: "center", marginBottom: "48px" }}
+      >
         Vidya Bharati Akhil Bharatiya Shiksha Sansthan is the country's largest
         non-government educational institution.
       </p>
       <ShikshaDaanHighlights />
     </SectionContainer>
 
-    <CallToAction
-      heading="Support Our Mission"
-      para="Join us in our mission to provide quality education across India. Your contribution can make a difference."
-      btn1="Contribute Now"
-   />
+    <CallToAction />
   </>
 );
 

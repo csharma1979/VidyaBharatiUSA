@@ -177,11 +177,11 @@ const Footer = () => {
           <Grid item xs={12} sm={6} md={3}>
             <SectionTitle>Quick Links</SectionTitle>
             <FooterLink href="/">Home</FooterLink>
+            <FooterLink href="/about">About</FooterLink>
             <FooterLink href="/programs">Programs</FooterLink>
             <FooterLink href="/events">Events</FooterLink>
             <FooterLink href="/alumni">Alumni</FooterLink>
             <FooterLink href="/blog">Blog</FooterLink>
-            {/* <FooterLink href="/contact">Contact</FooterLink>*/}
           </Grid>
 
           {/* Programs */}
@@ -216,9 +216,9 @@ const Footer = () => {
             <ContactItem>
               <LocationOnIcon />
               <Typography variant="body2" sx={{ opacity: 0.8 }}>
-                123 Education Street, Suite 100
+                29 Olde Hamlet Dr. Jericho
                 <br />
-                San Jose, CA 95134
+                NY 11237
               </Typography>
             </ContactItem>
             <ContactItem>
@@ -240,7 +240,7 @@ const Footer = () => {
                 underline="hover"
                 sx={{ opacity: 0.8 }}
               >
-               support@vidyabharatiusa.org
+                support@vidyabharatiusa.org
               </MuiLink>
             </ContactItem>
           </Grid>

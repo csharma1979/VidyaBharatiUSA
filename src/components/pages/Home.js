@@ -14,8 +14,8 @@ const Home = () => {
       <Header />
       <Banner />
       <WelcomeSection />
-      <AlumniSection />
-      <SponsorshipInitiatives />
+      {/* <AlumniSection />
+      <SponsorshipInitiatives /> */}
       <PresidentMessage />
     </Box>
   );

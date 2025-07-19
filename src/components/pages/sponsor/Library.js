@@ -181,16 +181,13 @@ const SponsorLibrary = () => {
 
           <p className="section-subtext ">
             Vidya Bharati is a 501(c)(3) tax-exempt organization. Your donation
-            is tax-deductible to the extent allowed by law. Our EIN number is
-            05-0540432.
+            is tax-deductible to the extent allowed by law.
+            <br />
+            Our EIN number is 47-4676188.
           </p>
         </Box>
       </Container>
-      <CallToAction
-        heading="Join Us in Enriching Young Minds"
-        para="Your support today will provide essential library resources that foster a love for reading, expand knowledge, and improve educational outcomes for thousands of children across rural India."
-        btn1="Sponsor a Library"
-      />
+      <CallToAction />
     </>
   );
 };

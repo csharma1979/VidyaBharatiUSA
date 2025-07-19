@@ -24,12 +24,7 @@ const Alumni = () => {
       <GlobalPresence />
       <VBFAAlumni />
       <RecentAlumni />
-      <CallToAction
-        heading="Join Our Alumni Network"
-        para="Be part of our vibrant alumni community. Register to access exclusive benefits, stay connected with fellow alumni, and contribute to the growth of Vidya Bharati."
-        btn1="Register Now"
-        btn2="Learn More"
-      />
+      <CallToAction btn2="Register Now" />
     </>
   );
 };

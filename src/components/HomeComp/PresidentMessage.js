@@ -6,7 +6,7 @@ const PresidentMessage = () => (
     <h1 className="page-title">
       Message from <span>President</span>
     </h1>
-    <h3>Mr. Surendra Garg</h3>
+    <h3>Dr. Surendra Garg</h3>
     <div className="message-content">
       <p>
         Vidya Bharati was established in 1952 in Gorakhpur, Uttar Pradesh. Today

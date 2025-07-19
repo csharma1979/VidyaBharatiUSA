@@ -18,11 +18,7 @@ const SanskritiBodh = () => {
         <SanskritiIntro />
         <HighlightsSection />
       </div>
-        <CallToAction
-          heading="Support Cultural Education"
-          para="Help us preserve and promote India's rich cultural heritage through education. Your support makes a difference."
-          btn1="Contribute Now"
-        />
+      <CallToAction />
     </>
   );
 };

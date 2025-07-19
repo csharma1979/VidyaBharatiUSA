@@ -41,11 +41,7 @@ const SupportChild = () => {
           </p>
         </Box>
       </Container>
-      <CallToAction
-        heading="Make a Difference Today"
-        para="Your contribution can change a child's life. Join us in our mission to provide quality education to every child."
-        btn1="Support Now"
-      />
+      <CallToAction />
     </>
   );
 };
