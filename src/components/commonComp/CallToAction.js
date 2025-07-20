@@ -13,6 +13,7 @@ const CallToAction = ({ btn1 = "Donate", btn2 }) => {
             Join us in our mission to provide quality education across India.
             Your contribution can make a difference.
           </p>
+         
           {(btn1 || btn2) && (
             <Box className="cta-buttons">
               {btn1 && (

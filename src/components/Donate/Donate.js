@@ -12,7 +12,9 @@ const Donate = () => {
       />
       <Container className="support-container">
         <Box sx={{ marginBottom: "64px" }}>
-          <h1 className="support-title">Preserve Culture, Educate the Future – Donate Today</h1>
+          <h1 className="support-title">
+            Preserve Culture, Educate the Future – Donate Today
+          </h1>
           <p className="alumni-desc">
             Vidya Bharati is a 501(c)(3) tax-exempt non-profit organization
             dedicated to preserving and promoting Indian culture, heritage, and
@@ -23,29 +25,21 @@ const Donate = () => {
           </p>
         </Box>
 
-        <Box className="tax-section" sx={{ marginBottom: "64px" }}>
-          <h1 className="support-title">Board of Directors</h1>
-          <div>
-            <Typography>
-              <strong> Dr. Surendra Garg </strong> - President
-            </Typography>
-            <Typography>
-              <strong> Dr. Yashpal Arya </strong> - Vice President
-            </Typography>
-          </div>
-        </Box>
-
         <Box className=" impact-box">
           <h1 className=" support-title">
-            Please make a check payable to:“Vidya Bharati USA”
+            Please make a check payable to:“Vidya Bharati Foundation of USA”
           </h1>
           <p className="section-subtext ">
             and mail it to the below Address: <br /> Vidya Bharati USA, 29 Olde
             Hamlet Dr. Jericho, NY 11237
             <br />
             <br />
-            (Please mention Tax File No. 47-4676188 on your check for
-            reference.)
+            {/* (Please mention Tax File No. 47-4676188 on your check for
+            reference.) */}
+            Vidya Bharati is a 501(c)(3) tax-exempt organization. Your donation
+            is tax-deductible to the extent allowed by law. Our EIN number is
+            47-4676188.
+            <br />
             <br />
             Thank you for supporting our mission
           </p>
