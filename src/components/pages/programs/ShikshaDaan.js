@@ -3,7 +3,7 @@ import PageBanner from "../../layout/PageBanner";
 import SectionContainer from "../../shared/SectionContainer";
 import SectionHeading from "../../shared/SectionHeading";
 import ShikshaDaanHighlights from "../../ShikshaDaan/ShikshaDaanHighlights";
-
+import Head from "next/head";
 import CallToAction from "../../commonComp/CallToAction";
 
 const ShikshaDaan = () => (
