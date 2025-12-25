@@ -114,10 +114,14 @@ const SupportVidyaBharati = () => {
             Tax Benefits
           </Typography>
           <p className="section-subtext ">
+<<<<<<< HEAD
             Vidya Bharati is a 501(c)(3) tax-exempt organization. Your donation
             is tax-deductible to the extent allowed by law.
             <br />
             Our EIN number is 47-4676188.
+=======
+           Vidya Bharati is a 501(c)(3) tax-exempt organization. Your donation is tax-deductible to the extent allowed by law. Our EIN number is 47-4676188.
+>>>>>>> f8bdc28 (25122025)
           </p>
         </Box>
       </Container>

@@ -1,0 +1,16 @@
+{
+  "name": "Vidya Bharati USA",
+  "short_name": "VBUSA",
+  "description": "Vidya Bharati USA Foundation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#841B2D",
+  "icons": [
+    {
+      "src": "/assets/logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    }
+  ]
+}

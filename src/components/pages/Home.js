@@ -1,10 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Header from "../layout/Header";
 import Banner from "../layout/Banner";
 import WelcomeSection from "../HomeComp/WelcomeSection";
-import AlumniSection from "../HomeComp/AlumniSection";
-import SponsorshipInitiatives from "../HomeComp/SponsorshipInitiatives";
 import PresidentMessage from "../HomeComp/PresidentMessage";
 import Head from "next/head";
 
@@ -21,7 +18,7 @@ const Home = () => {
         {/* Meta Description */}
         <meta
           name="description"
-          content="Empower underprivileged children in India through education, infrastructure, and cultural programs. Support VBFA’s mission to build a stronger, educated nation."
+          content="Empower underprivileged children in India through education, infrastructure, and cultural programs. Support VBFA's mission to build a stronger, educated nation."
         />
         {/* SEO Keywords */}
         <meta
@@ -31,11 +28,8 @@ const Home = () => {
       </Head>
 
       <Box>
-        <Header />
         <Banner />
         <WelcomeSection />
-        {/* <AlumniSection />
-      <SponsorshipInitiatives /> */}
         <PresidentMessage />
       </Box>
     </>

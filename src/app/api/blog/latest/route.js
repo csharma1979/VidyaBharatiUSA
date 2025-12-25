@@ -4,7 +4,14 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    await dbConnect();
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { message: "Database connection failed. Service unavailable.", data: [] },
+        { status: 503 }
+      );
+    }
+    
     const blogs = await Blog.find().sort({ createdAt: -1 }).limit(3);
     return NextResponse.json({
       message: "Latest blogs fetched successfully",

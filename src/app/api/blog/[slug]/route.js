@@ -5,7 +5,14 @@ import slugify from "slugify";
 
 export async function GET(req, { params }) {
   try {
-    await dbConnect();
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { message: "Database connection failed. Service unavailable." },
+        { status: 503 }
+      );
+    }
+    
     const { slug } = await params;
 
     const blog = await Blog.findOne({ slug });
@@ -26,7 +33,14 @@ export async function GET(req, { params }) {
 // PUT - update blog by slug
 export async function PUT(req, { params }) {
   try {
-    await dbConnect();
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { message: "Database connection failed. Service unavailable." },
+        { status: 503 }
+      );
+    }
+    
     const { slug } = params;
     const body = await req.json();
 

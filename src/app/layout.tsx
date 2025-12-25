@@ -6,13 +6,13 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// Dynamic imports for client components
-const ClientLayout = dynamic(() => import('./ClientLayout'), {
-  ssr: false
+// Dynamic import for client components that use client-side hooks
+const ClientLayoutWrapper = dynamic(() => import('./ClientLayoutWrapper'), {
+  ssr: false,
+  loading: () => <div className="min-h-screen flex items-center justify-center">Loading...</div>
 });
 
-
-
+// Server component for the root layout
 export const metadata = {
   title: 'Vidyabharti',
   description: 'Schools Of Dream',
@@ -49,9 +49,9 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/assets/logo.webp" />
       </head>
       <body className={inter.className}>
-        <ClientLayout>
+        <ClientLayoutWrapper>
           {children}
-        </ClientLayout>
+        </ClientLayoutWrapper>
       </body>
     </html>
   );

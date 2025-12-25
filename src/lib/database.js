@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import Identity from "../Models/Identity.js";
@@ -6,12 +5,20 @@ import Identity from "../Models/Identity.js";
 // Load env variables (only once, usually in main entry)
 dotenv.config();
 
+let isConnected = false; // Track connection status
+
 const dbConnect = async () => {
   try {
+    // Check if already connected
+    if (isConnected) {
+      return mongoose.connection;
+    }
+
     const MONGO_URI = process.env.MONGODB_URI;
 
     if (!MONGO_URI) {
-      throw new Error("MONGODB_URI not defined in environment variables");
+      console.warn("⚠️ MONGODB_URI not defined in environment variables. Database features will be disabled.");
+      return null;
     }
 
     await mongoose.connect(MONGO_URI, {
@@ -19,12 +26,16 @@ const dbConnect = async () => {
       useUnifiedTopology: true,
     });
 
+    isConnected = true;
     console.log("✅ Vidya Bharti DB Connected successfully");
     await createHardcodedUsers();
+    
+    return mongoose.connection;
   } catch (error) {
     console.error("❌ Vidya Bharti  360 DB Connection Failed");
     console.error(error);
-    process.exit(1);
+    // Don't exit the process, just return null to indicate connection failure
+    return null;
   }
 };
 

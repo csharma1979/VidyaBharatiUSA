@@ -5,7 +5,13 @@ import { loginUser } from '../../../../Controllers/Identity';
 
 export async function POST(req) {
   try {
-    await dbConnect();
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { message: "Database connection failed. Service unavailable." },
+        { status: 503 }
+      );
+    }
 
     const { email, password } = await req.json();
 

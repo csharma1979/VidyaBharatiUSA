@@ -37,7 +37,13 @@ async function downloadImage(imageUrl, savePath) {
 export async function POST(req) {
   try {
     //built db connection 
-    await dbConnect();
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { success: false, message: "Database connection failed. Service unavailable." },
+        { status: 503 }
+      );
+    }
 
     const textBody = await req.text();
 

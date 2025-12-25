@@ -7,7 +7,6 @@ import slugify from "slugify";
 import fs from "fs/promises";
 
 
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");
@@ -21,7 +20,14 @@ const uploadMiddleware = upload.single("uploadImage");
 
 export async function POST(req) {
   try {
-    await dbConnect();
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { message: "Database connection failed. Service unavailable." },
+        { status: 503 }
+      );
+    }
+    
     const formData = await req.formData();
 
     const blogTopic = formData.get("blogTopic");
@@ -78,7 +84,14 @@ export async function POST(req) {
 
 export async function GET() {
   try {
-    await dbConnect();
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { message: "Database connection failed. Service unavailable.", data: [] },
+        { status: 503 }
+      );
+    }
+    
     const blogs = await Blog.find();
     return NextResponse.json({
       message: "Blogs fetched successfully",
@@ -93,7 +106,6 @@ export async function GET() {
 }
 
 
-
 export async function DELETE(req) {
   const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");
@@ -106,7 +118,14 @@ export async function DELETE(req) {
   }
 
   try {
-    await dbConnect();
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { message: "Database connection failed. Service unavailable." },
+        { status: 503 }
+      );
+    }
+    
     const blog = await Blog.findByIdAndDelete(id);
     if (!blog) {
       return NextResponse.json({ message: "Blog not found" }, { status: 404 });

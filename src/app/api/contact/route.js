@@ -6,7 +6,13 @@ import { NextResponse } from "next/server";
 // POST - Submit contact form request and send email
 export const POST = async (req) => {
   try {
-    await dbConnect(); // Ensure DB connection
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { message: "Database connection failed. Service unavailable." },
+        { status: 503 }
+      );
+    }
 
     const body = await req.json();
 
@@ -63,7 +69,14 @@ export const POST = async (req) => {
 // GET - Fetch all contact form submissions
 export const GET = async () => {
   try {
-    await dbConnect(); // Ensure connection to the DB
+    const db = await dbConnect();
+    if (!db) {
+      return NextResponse.json(
+        { error: "Database connection failed. Service unavailable.", data: [] },
+        { status: 503 }
+      );
+    }
+    
     const contactForms = await ContactForm.find();
 
     return NextResponse.json(contactForms);
