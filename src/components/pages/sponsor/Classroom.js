@@ -137,10 +137,10 @@ const SponsorClassroom = () => {
 
           <Box className="section-dex-box">
             <p className="">
-              <strong>What we build:</strong> Each toilet block includes 6-8
-              separate toilet units with proper ventilation, handwashing
-              stations, and a sustainable water supply system. Construction uses
-              durable materials suitable for local conditions.
+              <strong>What we build:</strong> Each classroom is designed to
+              accommodate 30-40 students with proper ventilation, lighting, and
+              essential teaching aids. Construction uses durable materials
+              suitable for local conditions.
             </p>
 
             <p className="">
@@ -161,16 +161,10 @@ const SponsorClassroom = () => {
           <Typography variant="h5" className="section-heading">
             Tax Benefits
           </Typography>
-          <p className="section-subtext ">
+          <p className="section-subtext">
             Vidya Bharati is a 501(c)(3) tax-exempt organization. Your donation
-<<<<<<< HEAD
-            is tax-deductible to the extent allowed by law.
-            <br />
-            Our EIN number is 47-4676188.
-=======
             is tax-deductible to the extent allowed by law. Our EIN number is
             47-4676188.
->>>>>>> f8bdc28 (25122025)
           </p>
         </Box>
       </Container>

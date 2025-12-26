@@ -162,16 +162,10 @@ const SponsorToiletBlock = () => {
           <Typography variant="h5" className="section-heading">
             Tax Benefits
           </Typography>
-          <p className="section-subtext ">
+          <p className="section-subtext">
             Vidya Bharati is a 501(c)(3) tax-exempt organization. Your donation
-<<<<<<< HEAD
-            is tax-deductible to the extent allowed by law.
-            <br />
-            Our EIN number is 47-4676188.
-=======
             is tax-deductible to the extent allowed by law. Our EIN number is
             47-4676188.
->>>>>>> f8bdc28 (25122025)
           </p>
         </Box>
       </Container>
